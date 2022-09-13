@@ -88,7 +88,7 @@ tokenizer = T5Tokenizer.from_pretrained(args.load_model)
 print("Loaded tokenizer from directory {}".format(args.load_model))
 model = T5ForConditionalGeneration.from_pretrained(args.load_model)
 print("Loaded model from directory {}".format(args.load_model))
-model.to(f"cuda:{torch.cuda.current_device()}")
+# model.to(f"cuda:{torch.cuda.current_device()}")
 model.resize_token_embeddings(len(tokenizer))
 model.eval()
 
