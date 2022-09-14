@@ -43,7 +43,7 @@ threadpoolctl==2.1.0
 tokenizers==0.10.3
 torch==1.12.1
 torchtext==0.4.0
-torchvision
+torchvision==0.13.1
 tqdm==4.52.0
 transformers==4.7.0
 typing-extensions==3.7.4.3
