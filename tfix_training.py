@@ -78,6 +78,12 @@ print(all_warning_types)
     test_info,
 ) = create_data(data, all_warning_types, include_warning=True, model_name=model_name)
 
+# Check GPU availability
+if torch.cuda.is_available():
+    print("GPU available")
+else:
+    print("No GPU available")
+
 # Create the tokenizer and the model
 tokenizer = T5Tokenizer.from_pretrained(
     model_name,

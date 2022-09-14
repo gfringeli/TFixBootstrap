@@ -88,7 +88,11 @@ tokenizer = T5Tokenizer.from_pretrained(args.load_model)
 print("Loaded tokenizer from directory {}".format(args.load_model))
 model = T5ForConditionalGeneration.from_pretrained(args.load_model)
 print("Loaded model from directory {}".format(args.load_model))
-# model.to(f"cuda:{torch.cuda.current_device()}")
+if torch.cuda.is_available():
+    print("GPU available")
+    model.to(f"cuda:{torch.cuda.current_device()}")
+else:
+    print("No GPU available")
 model.resize_token_embeddings(len(tokenizer))
 model.eval()
 
